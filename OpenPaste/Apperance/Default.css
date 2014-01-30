@@ -1,0 +1,178 @@
+﻿body {
+}
+
+/* rule for default build ofdocument */
+div.container
+{
+    width:1200px;
+    margin: 0 auto;
+    height:100%;
+}
+
+div.header
+{
+    height:100px;
+}
+
+div.banner{
+    height:75px;
+}
+
+div.menu_bar{
+    height:25px;
+    background-color:yellow;
+}
+
+div.menu_bar > ul > li
+{
+    list-style: none;
+    display: block;
+    margin-right:10px;
+    float: left;
+}
+
+div.menu_bar > ul
+{
+    display: inline;
+}
+
+div.content
+{
+
+}
+
+div.footer
+{
+
+}
+
+div.banner > div
+{
+    font-family:Consolas;
+    font-size:27px;
+}
+
+div.banner > div.subtitle
+{
+    font-family: 'Times New Roman';
+    font-size:14px;
+}
+
+/*System of displaing forms */
+form.bordered
+{
+    display: block;
+    border: solid black 1px;
+    background-color: #F3F3F3;
+    margin: 20px;
+    max-width:400px;
+}
+
+form div.form_row
+{
+    clear:both;
+    width: 416px;
+}
+
+form div.form_row > div
+{
+    float:left;
+    width:175px;
+    padding-top: 10px;
+}
+
+form div.form_row > div.name
+{
+    text-align:right;
+    padding-right: 10px;
+}
+
+form div.form_summary
+{
+    text-align:right;
+    padding:10px;
+}
+
+form span.error
+{
+    color:red;
+    font-size: 14px;
+    margin-left:0px;
+}
+
+/* Paste code form*/
+
+form.paste_code
+{
+    width:auto;
+    max-width:none;
+    margin-left:100px;
+    margin-right: 100px;
+}
+
+form.paste_code > div.form_code_paste
+{
+    float:none;
+}
+
+form.paste_code > div.form_row > div.name
+{
+    width: auto;
+}
+
+form.paste_code textarea
+{
+    width:900px;
+    height:600px;
+    margin-left: 65px;
+}
+
+/* paste code description */
+div.pastes
+{
+    background-color: #FFFFFF;
+    border: none;
+}
+
+div.paste
+{
+    background-color: #F1F1F1;
+    margin-bottom:45px;
+    border: 1px solid #808080;
+    width: 100%;
+}
+
+div.paste > .code
+{
+    font-family: monospace;
+}
+
+div.paste > div.details > div
+{
+    float:left;
+    margin-left:10px;
+    font-style: italic;
+}
+
+/* lang highlights */
+span.java_import
+{
+    color:#ffd800;
+}
+
+span.java_function
+{
+    color: green;
+}
+span.java_type
+{
+    color: blue;
+}
+
+/* abuse table */
+table td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: -5px;
+}

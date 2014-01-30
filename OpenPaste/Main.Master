@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="OpenPaste.Main" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>OpenPaste</title>
+    <link rel="stylesheet" href="Apperance/Default.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container">
+            <div class="header">
+                <div class="banner">
+                    <div class="title">OpenPaste</div>
+                    <div class="subtitle">Your own paste service</div>
+                </div>
+                <nav>
+                <div class="menu_bar">
+                    <ul>
+                        <li><a href="Pastes.aspx">Pastes</a></li>
+                        <li><a href="Paste.aspx">Paste code</a></li>
+                        <% if (Session["user"] == null) { %>
+                        <li><a href="RegisterUser.aspx">Register</a></li>
+                        <li><a href="Login.aspx">Login</a></li>
+                        <% } else { %>
+                        <% if ((Session["user"] as OpenPaste.Models.User).status == "admin") { %>
+                            <li><a href="admin_pastes.aspx">Admin Pastes</a></li>
+                            <li><a href="admin_users.aspx">Admin Users</a></li>
+                            <li><a href="admin_abuses.aspx">Admin Abuses</a></li>
+                        <% } %>
+                        <li><a href="Pastes.aspx?myOwn=1">My Pastes</a></li>
+                        <li><a href="LogoutUser.aspx">Logout</a></li>
+                        <li><a href="ModifyUser.aspx">Modify account</a></li>    
+                        <% } %>
+                        <li>
+                        <form action="Pastes.aspx" method="get">
+                            <input type="text" name="search" />
+                            <input type="submit" value="search" />
+                        </form>
+                        </li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="footer">
+
+            </div>
+        </div>
+</body>
+</html>
